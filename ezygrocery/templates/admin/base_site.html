@@ -1,0 +1,170 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'admin/css/rich-textarea.css' %}">
+<style>
+/* Additional admin customizations */
+.module h2, .module caption, .inline-group h2 {
+    margin: 0;
+    padding: 8px 15px;
+    font-weight: normal;
+    font-size: 13px;
+    text-align: left;
+    background: #79aec8;
+    color: #fff;
+}
+
+/* Better fieldset styling */
+fieldset.module {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+fieldset.module h2 {
+    background: #f8f9fa;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 10px 15px;
+    font-weight: 600;
+}
+
+/* Collapse styling */
+fieldset.collapse {
+    border-color: #e0e0e0;
+}
+
+fieldset.collapse h2 {
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+fieldset.collapse h2:hover {
+    background: #eeeeee;
+}
+
+/* Form row improvements */
+.form-row {
+    overflow: hidden;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.form-row:last-child {
+    border-bottom: none;
+}
+
+/* Label styling */
+.form-row label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Help text styling */
+.help {
+    font-size: 11px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Textarea improvements */
+textarea {
+    font-family: inherit;
+}
+
+/* Inline styling improvements */
+.inline-group {
+    margin-bottom: 20px;
+}
+
+.tabular.inline-related tbody tr:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+/* Button styling */
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #417690;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.button:hover, input[type=submit]:hover, input[type=button]:hover, .submit-row input:hover, a.button:hover {
+    background: #205067;
+}
+
+/* Success/Error message styling */
+.messagelist {
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+.messagelist li {
+    display: block;
+    padding: 10px 15px;
+    margin: 0 0 5px 0;
+    border-radius: 4px;
+    list-style: none;
+}
+
+.messagelist .success {
+    background: #dff0d8;
+    border: 1px solid #d6e9c6;
+    color: #3c763d;
+}
+
+.messagelist .error {
+    background: #f2dede;
+    border: 1px solid #ebccd1;
+    color: #a94442;
+}
+
+.messagelist .warning {
+    background: #fcf8e3;
+    border: 1px solid #faebcc;
+    color: #8a6d3b;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add help text to rich textareas
+    const richTextareas = document.querySelectorAll('.rich-textarea');
+    richTextareas.forEach(function(textarea) {
+        const helpDiv = document.createElement('div');
+        helpDiv.className = 'rich-textarea-help';
+        helpDiv.innerHTML = 'You can use HTML tags: <code>&lt;p&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;li&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;a href=""&gt;</code>';
+        textarea.parentNode.appendChild(helpDiv);
+    });
+    
+    // Improve collapse functionality
+    const collapseHeaders = document.querySelectorAll('fieldset.collapse h2');
+    collapseHeaders.forEach(function(header) {
+        header.style.cursor = 'pointer';
+        header.addEventListener('click', function() {
+            const fieldset = this.parentNode;
+            const content = fieldset.querySelector('.form-row, .module');
+            if (content) {
+                if (content.style.display === 'none') {
+                    content.style.display = 'block';
+                    this.style.background = '#f8f9fa';
+                } else {
+                    content.style.display = 'none';
+                    this.style.background = '#e9ecef';
+                }
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

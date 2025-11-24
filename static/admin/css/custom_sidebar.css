@@ -1,0 +1,264 @@
+/* Custom Sidebar Styling for Unfold Admin - Perfect Menu Design */
+
+/* ==================== MAIN SIDEBAR CONTAINER ==================== */
+#nav-sidebar {
+    background: linear-gradient(180deg, #1a4d6d 0%, #0d2d45 100%) !important;
+}
+
+#nav-sidebar-inner {
+    background: transparent !important;
+}
+
+/* Remove all white/light backgrounds */
+#nav-sidebar .bg-base-50,
+#nav-sidebar .bg-white,
+#nav-sidebar .bg-base-100 {
+    background: transparent !important;
+}
+
+/* Scrollable content area */
+#nav-sidebar .simplebar-content-wrapper,
+#nav-sidebar .simplebar-content {
+    background: transparent !important;
+}
+
+/* ==================== HEADER AREA ==================== */
+/* Site name/header area */
+#nav-sidebar #site-name a {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 600 !important;
+}
+
+/* Header area - remove white background */
+#nav-sidebar .border-b.border-base-200 {
+    background: transparent !important;
+}
+
+/* Site name container */
+#nav-sidebar .bg-transparent {
+    background: transparent !important;
+}
+
+/* Logo icon background - lime green with glow */
+#nav-sidebar .bg-primary-600:not(a) {
+    background: linear-gradient(135deg, #c4d82e 0%, #b8cc2a 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(196, 216, 46, 0.3) !important;
+}
+
+/* ==================== SECTION TITLES ==================== */
+/* Section titles (h2) - lighter text */
+#nav-sidebar h2 {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Separator lines - subtle white */
+#nav-sidebar hr {
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Collapsible section headers (dropdown) */
+#nav-sidebar h2.cursor-pointer {
+    color: rgba(255, 255, 255, 0.85) !important;
+    transition: all 0.2s ease !important;
+}
+
+#nav-sidebar h2.cursor-pointer:hover {
+    color: #c4d82e !important;
+}
+
+#nav-sidebar h2.cursor-pointer .material-symbols-outlined {
+    color: rgba(255, 255, 255, 0.7) !important;
+    transition: all 0.3s ease !important;
+}
+
+#nav-sidebar h2.cursor-pointer:hover .material-symbols-outlined {
+    color: #c4d82e !important;
+    transform: translateX(2px) !important;
+}
+
+/* Non-collapsible section headers (no dropdown) */
+#nav-sidebar h2:not(.cursor-pointer) {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 700 !important;
+}
+
+/* ==================== NAVIGATION LINKS ==================== */
+/* Default navigation links - white text on transparent */
+#nav-sidebar ol li a {
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    background: transparent !important;
+    border-left: 3px solid transparent !important;
+    border-radius: 8px !important;
+    position: relative !important;
+    margin: 2px 0 !important;
+}
+
+/* Remove default active styles */
+#nav-sidebar ol li a.bg-base-100 {
+    background: transparent !important;
+}
+
+#nav-sidebar ol li a.text-primary-600 {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Icons - white color */
+#nav-sidebar ol li a .material-symbols-outlined {
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* ==================== HOVER STATES ==================== */
+/* Hover state - subtle lime glow */
+#nav-sidebar ol li a:hover {
+    background: linear-gradient(90deg, rgba(196, 216, 46, 0.15) 0%, transparent 100%) !important;
+    color: #ffffff !important;
+    border-left: 3px solid rgba(196, 216, 46, 0.5) !important;
+}
+
+#nav-sidebar ol li a:hover .material-symbols-outlined {
+    color: #c4d82e !important;
+    transform: scale(1.1) !important;
+}
+
+/* ==================== ACTIVE MENU ITEMS ==================== */
+/* Active menu item - SOLID LIME GREEN background with WHITE text */
+#nav-sidebar ol li a[aria-current="page"],
+#nav-sidebar ol li a.bg-primary-600,
+#nav-sidebar ol li a.font-semibold.text-primary-600,
+#nav-sidebar ol li a.bg-base-100.font-semibold,
+#nav-sidebar ol li a.bg-base-100.font-semibold.text-primary-600 {
+    background: linear-gradient(90deg, #c4d82e 0%, #b8cc2a 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    border-left: 3px solid #c4d82e !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(196, 216, 46, 0.3) !important;
+}
+
+/* Active menu icons - WHITE with subtle glow */
+#nav-sidebar ol li a[aria-current="page"] .material-symbols-outlined,
+#nav-sidebar ol li a.bg-primary-600 .material-symbols-outlined,
+#nav-sidebar ol li a.font-semibold .material-symbols-outlined,
+#nav-sidebar ol li a.text-primary-600 .material-symbols-outlined,
+#nav-sidebar ol li a.bg-base-100.font-semibold .material-symbols-outlined {
+    color: #ffffff !important;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3)) !important;
+}
+
+/* Active menu hover state - brighter lime green */
+#nav-sidebar ol li a[aria-current="page"]:hover,
+#nav-sidebar ol li a.bg-primary-600:hover,
+#nav-sidebar ol li a.font-semibold.text-primary-600:hover,
+#nav-sidebar ol li a.bg-base-100.font-semibold:hover {
+    background: linear-gradient(90deg, #d0e038 0%, #c4d82e 100%) !important;
+    color: #ffffff !important;
+    border-left: 3px solid #d0e038 !important;
+    box-shadow: 0 4px 12px rgba(196, 216, 46, 0.4) !important;
+    transform: translateX(2px) !important;
+}
+
+/* Override dark mode classes for active menu items */
+#nav-sidebar ol li a.bg-base-100.font-semibold.text-primary-600.dark\:bg-white\/\[\.06\],
+#nav-sidebar ol li a.bg-base-100.font-semibold.text-primary-600.dark\:text-primary-500 {
+    background: linear-gradient(90deg, #c4d82e 0%, #b8cc2a 100%) !important;
+    color: #ffffff !important;
+    border-left: 3px solid #c4d82e !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(196, 216, 46, 0.3) !important;
+}
+
+
+
+/* ==================== BORDERS & SCROLLBAR ==================== */
+/* Border colors */
+#nav-sidebar .border-base-200,
+#nav-sidebar .border-b {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Scrollbar styling */
+#nav-sidebar .simplebar-scrollbar::before {
+    background: rgba(196, 216, 46, 0.3) !important;
+}
+
+#nav-sidebar .simplebar-track {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ==================== SECTION CONTAINERS ==================== */
+/* All section containers (both dropdown and non-dropdown) */
+#nav-sidebar .has-\[ol\]\:has-\[li\]\:block {
+    margin-bottom: 0.5rem !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Section with active items - subtle background highlight */
+#nav-sidebar .has-\[ol\]\:has-\[li\]\:block:has(a.bg-base-100.font-semibold),
+#nav-sidebar .has-\[ol\]\:has-\[li\]\:block:has(a[aria-current="page"]) {
+    background: rgba(196, 216, 46, 0.05) !important;
+    border-radius: 12px !important;
+    padding: 0.5rem 0 !important;
+    margin: 0.5rem 0.25rem !important;
+}
+
+/* Highlight section title when it contains active items */
+#nav-sidebar .has-\[ol\]\:has-\[li\]\:block:has(a.bg-base-100.font-semibold) h2,
+#nav-sidebar .has-\[ol\]\:has-\[li\]\:block:has(a[aria-current="page"]) h2 {
+    color: #c4d82e !important;
+    text-shadow: 0 0 8px rgba(196, 216, 46, 0.3) !important;
+}
+
+/* Ordered list within sections */
+#nav-sidebar .has-\[ol\]\:has-\[li\]\:block ol {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+
+/* List items spacing */
+#nav-sidebar .has-\[ol\]\:has-\[li\]\:block ol li {
+    margin: 0.25rem 0 !important;
+}
+
+/* ==================== DROPDOWN SPECIFIC STYLING ==================== */
+/* Dropdown sections when expanded */
+#nav-sidebar .has-\[ol\]\:has-\[li\]\:block[x-data*="navigationOpen"] ol[x-show="navigationOpen"] {
+    animation: slideDown 0.3s ease-out !important;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================== SMOOTH TRANSITIONS ==================== */
+/* Smooth transitions for all interactive elements */
+#nav-sidebar * {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* ==================== SUBTLE ANIMATION ==================== */
+/* Add subtle pulsing glow on active items */
+@keyframes activeGlow {
+    0%, 100% {
+        box-shadow: 0 2px 8px rgba(196, 216, 46, 0.3);
+    }
+    50% {
+        box-shadow: 0 2px 12px rgba(196, 216, 46, 0.5);
+    }
+}
+
+#nav-sidebar ol li a[aria-current="page"],
+#nav-sidebar ol li a.bg-base-100.font-semibold.text-primary-600 {
+    animation: activeGlow 3s ease-in-out infinite !important;
+}

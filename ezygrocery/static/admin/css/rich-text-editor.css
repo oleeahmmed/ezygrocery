@@ -1,0 +1,119 @@
+/* Rich Text Editor Styles */
+.rich-text-toolbar {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-bottom: none;
+    padding: 8px;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    border-radius: 4px 4px 0 0;
+}
+
+.rich-text-toolbar button {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+
+.rich-text-toolbar button:hover {
+    background-color: #e9ecef;
+}
+
+.rich-text-toolbar button:active {
+    background-color: #dee2e6;
+}
+
+.rich-text-editor {
+    border-top: none !important;
+    border-radius: 0 0 4px 4px !important;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    resize: vertical;
+}
+
+/* Grid Layout for Admin Fieldsets */
+.grid-2-columns .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.grid-2-columns .form-row > div {
+    width: 100%;
+}
+
+.grid-3-columns .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    align-items: start;
+}
+
+.grid-3-columns .form-row > div {
+    width: 100%;
+}
+
+/* Full width for rich text fields */
+.full-width .form-row {
+    display: block;
+}
+
+.full-width .form-row > div {
+    width: 100%;
+}
+
+/* Responsive grid */
+@media (max-width: 768px) {
+    .grid-2-columns .form-row,
+    .grid-3-columns .form-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* Fieldset styling */
+.fieldset.grid-2-columns,
+.fieldset.grid-3-columns {
+    margin-bottom: 20px;
+}
+
+.fieldset.grid-2-columns h2,
+.fieldset.grid-3-columns h2 {
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Unfold theme compatibility */
+.theme-dark .rich-text-toolbar {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+.theme-dark .rich-text-toolbar button {
+    background: #4b5563;
+    border-color: #6b7280;
+    color: #f9fafb;
+}
+
+.theme-dark .rich-text-toolbar button:hover {
+    background-color: #6b7280;
+}
+
+.theme-dark .rich-text-editor {
+    background: #374151;
+    color: #f9fafb;
+    border-color: #4b5563;
+}
+
+.theme-dark .fieldset.grid-2-columns h2,
+.theme-dark .fieldset.grid-3-columns h2 {
+    border-bottom-color: #4b5563;
+}

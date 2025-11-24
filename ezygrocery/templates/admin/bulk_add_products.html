@@ -1,0 +1,122 @@
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block title %}দোকানে একসাথে পণ্য যোগ করুন{% endblock %}
+
+{% block content %}
+<div style="max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <h1 style="margin-bottom: 20px; color: #333;">🏪 দোকানে একসাথে পণ্য যোগ করুন</h1>
+    
+    <div style="background: #e3f2fd; padding: 15px; border-radius: 5px; margin-bottom: 20px; border-left: 4px solid #2196f3;">
+        <strong>📝 নির্দেশনা:</strong>
+        <ul style="margin: 10px 0 0 20px;">
+            <li>প্রথমে দোকান নির্বাচন করুন</li>
+            <li>তারপর একাধিক পণ্য নির্বাচন করুন (Ctrl/Cmd চেপে)</li>
+            <li>মূল্য ও স্টক সেট করুন</li>
+            <li>"MRP ব্যবহার করুন" চেক করলে পণ্যের MRP বিক্রয় মূল্য হবে</li>
+        </ul>
+    </div>
+    
+    <form method="post" style="margin-top: 20px;">
+        {% csrf_token %}
+        
+        {% if form.errors %}
+        <div style="background: #ffebee; padding: 15px; border-radius: 5px; margin-bottom: 20px; border-left: 4px solid #f44336;">
+            <strong>❌ ত্রুটি:</strong>
+            {{ form.errors }}
+        </div>
+        {% endif %}
+        
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">
+                {{ form.shop.label }}
+            </label>
+            {{ form.shop }}
+            {% if form.shop.help_text %}
+            <small style="color: #666; display: block; margin-top: 5px;">{{ form.shop.help_text }}</small>
+            {% endif %}
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">
+                {{ form.products.label }}
+            </label>
+            {{ form.products }}
+            {% if form.products.help_text %}
+            <small style="color: #666; display: block; margin-top: 5px;">{{ form.products.help_text }}</small>
+            {% endif %}
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+            <div>
+                <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">
+                    {{ form.cost_price.label }}
+                </label>
+                {{ form.cost_price }}
+                {% if form.cost_price.help_text %}
+                <small style="color: #666; display: block; margin-top: 5px;">{{ form.cost_price.help_text }}</small>
+                {% endif %}
+            </div>
+            
+            <div>
+                <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">
+                    {{ form.selling_price.label }}
+                </label>
+                {{ form.selling_price }}
+                {% if form.selling_price.help_text %}
+                <small style="color: #666; display: block; margin-top: 5px;">{{ form.selling_price.help_text }}</small>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <label style="display: block; font-weight: bold; margin-bottom: 5px; color: #555;">
+                {{ form.stock.label }}
+            </label>
+            {{ form.stock }}
+            {% if form.stock.help_text %}
+            <small style="color: #666; display: block; margin-top: 5px;">{{ form.stock.help_text }}</small>
+            {% endif %}
+        </div>
+        
+        <div style="margin-bottom: 20px;">
+            <label style="display: flex; align-items: center; cursor: pointer;">
+                {{ form.use_mrp }}
+                <span style="margin-left: 8px; font-weight: bold; color: #555;">{{ form.use_mrp.label }}</span>
+            </label>
+            {% if form.use_mrp.help_text %}
+            <small style="color: #666; display: block; margin-top: 5px; margin-left: 24px;">{{ form.use_mrp.help_text }}</small>
+            {% endif %}
+        </div>
+        
+        <div style="display: flex; gap: 10px; margin-top: 30px;">
+            <button type="submit" style="background: #4caf50; color: white; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;">
+                ✅ পণ্য যোগ করুন
+            </button>
+            <a href="{% url 'admin:ezygrocery_shopproduct_changelist' %}" style="background: #9e9e9e; color: white; padding: 12px 24px; border: none; border-radius: 5px; text-decoration: none; display: inline-block; font-size: 16px; font-weight: bold;">
+                ❌ বাতিল
+            </a>
+        </div>
+    </form>
+</div>
+
+<style>
+    select, input[type="number"], input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+    
+    select:focus, input:focus {
+        outline: none;
+        border-color: #2196f3;
+        box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+    }
+    
+    button:hover {
+        opacity: 0.9;
+    }
+</style>
+{% endblock %}
